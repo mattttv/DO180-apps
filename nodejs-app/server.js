@@ -3,8 +3,11 @@ var createError = require('html-errors');
 var express = require('express');
 app = express();
 
+var os = require('os')
+
+
 app.get('/', function (req, res) {
-  res.send('Hello World from pod: ' + process.environment.HOSTNAME + '\n')
+  res.send('Hello World from pod: ' + os.hostname() + '\n')
 });
 
 app.listen(8080, function () {
